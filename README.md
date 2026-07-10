@@ -36,15 +36,7 @@ agy plugin install https://github.com/applora/agent-skills
 
 **Cursor**: on Team/Enterprise plans, import as a custom marketplace —
 Dashboard → Settings → Plugins → Team Marketplaces → Import, and paste
-`https://github.com/applora/agent-skills`. Individual accounts: copy
-`skills/shopify-app-store-market-research/` manually (below).
-
-**Hermes**: in your terminal, download the install script and run it:
-
-```
-curl -fsSL https://raw.githubusercontent.com/applora/agent-skills/main/.hermes-plugin/install.sh -o /tmp/applora-hermes-install.sh
-bash /tmp/applora-hermes-install.sh
-```
+`https://github.com/applora/agent-skills`.
 
 **VS Code**: ensure the Agent plugins preview is enabled in Settings, then
 open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`) and run
