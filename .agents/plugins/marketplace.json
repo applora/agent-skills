@@ -1,0 +1,16 @@
+{
+  "name": "applora-skills",
+  "interface": {
+    "displayName": "Applora Skills"
+  },
+  "plugins": [
+    {
+      "name": "applora",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "category": "Research"
+    }
+  ]
+}

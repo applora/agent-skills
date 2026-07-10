@@ -11,13 +11,59 @@ code to run, no dependencies to install.
 npx skills add https://github.com/applora/agent-skills --skill shopify-app-store-market-research
 ```
 
-Or copy the skill's folder manually into wherever your agent loads skills
-from — no build step, it's plain Markdown:
+Or use your agent's own plugin/extension system — this repo ships manifests
+for each:
 
-- **Claude Code**: copy into your project's `.claude/skills/` (or
-  `~/.claude/skills/` for every project).
-- **Claude Desktop / claude.ai**: use the skill upload option in Settings.
-- **Other agents**: check your agent's docs for where it looks for skills.
+**Claude Code**: in your terminal, run `claude plugin install`:
+
+```
+claude plugin marketplace add applora/agent-skills
+claude plugin install applora@applora-skills
+```
+
+**OpenAI Codex**: in your terminal, run `codex plugin add`:
+
+```
+codex plugin marketplace add applora/agent-skills
+codex plugin add applora@applora-skills
+```
+
+**Antigravity CLI**: in your terminal, install directly from the repo:
+
+```
+agy plugin install https://github.com/applora/agent-skills
+```
+
+**Cursor**: on Team/Enterprise plans, import as a custom marketplace —
+Dashboard → Settings → Plugins → Team Marketplaces → Import, and paste
+`https://github.com/applora/agent-skills`. Individual accounts: copy
+`skills/shopify-app-store-market-research/` manually (below).
+
+**Hermes**: in your terminal, download the install script and run it:
+
+```
+curl -fsSL https://raw.githubusercontent.com/applora/agent-skills/main/.hermes-plugin/install.sh -o /tmp/applora-hermes-install.sh
+bash /tmp/applora-hermes-install.sh
+```
+
+**VS Code**: ensure the Agent plugins preview is enabled in Settings, then
+open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`) and run
+`Chat: Install Plugin From Source`, entering:
+
+```
+https://github.com/applora/agent-skills
+```
+
+**Gemini CLI**: install the extension directly from the repo:
+
+```
+gemini extensions install https://github.com/applora/agent-skills
+```
+
+**Anything else**: copy `skills/shopify-app-store-market-research/` manually
+into wherever your agent loads skills from — no build step, it's plain
+Markdown. Claude Desktop / claude.ai use the skill upload option in
+Settings; check your agent's docs for the equivalent.
 
 ## Skills
 

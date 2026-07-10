@@ -1,0 +1,18 @@
+{
+  "name": "applora-skills",
+  "owner": {
+    "name": "Applora",
+    "email": "hi@applora.ai"
+  },
+  "metadata": {
+    "description": "Shopify App Store agent skills, built on Applora's MCP server."
+  },
+  "plugins": [
+    {
+      "name": "applora",
+      "source": "./",
+      "description": "Shopify App Store market research — competitor teardowns, keyword/category opportunity research, and merchant complaint mining, backed by Applora's live MCP data.",
+      "homepage": "https://applora.ai"
+    }
+  ]
+}

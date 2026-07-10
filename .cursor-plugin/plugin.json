@@ -1,0 +1,15 @@
+{
+  "name": "applora",
+  "description": "Shopify App Store market research — competitor teardowns, keyword/category opportunity research, and merchant complaint mining, backed by Applora's live MCP data.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Applora",
+    "email": "hi@applora.ai"
+  },
+  "homepage": "https://applora.ai",
+  "repository": "https://github.com/applora/agent-skills",
+  "license": "MIT",
+  "keywords": ["shopify", "app-store", "market-research", "mcp"],
+  "skills": "./skills/shopify-app-store-market-research",
+  "mcpServers": "./.mcp.json"
+}
