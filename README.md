@@ -44,7 +44,3 @@ gets back structured, current data it can reason over. The skill's job is
 just to tell the agent which tools exist and how to use them well for ASO
 and market-research questions — the data freshness comes from Applora's
 crawling running underneath it.
-
-## License
-
-MIT
