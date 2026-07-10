@@ -64,3 +64,9 @@ agent guessing at Shopify App Store facts from memory, it calls a tool and
 gets back structured, current data it can reason over. Each skill's job is
 just to tell the agent which tools exist and how to use them well — the
 data freshness comes from Applora's crawling running underneath it.
+
+## Disclaimer
+
+This project is independently maintained and is not affiliated with,
+endorsed by, or sponsored by Shopify Inc. "Shopify" and "Shopify App Store"
+are trademarks of Shopify Inc.
