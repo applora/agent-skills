@@ -19,7 +19,7 @@ connected (search for tools named `search_apps`, `get_app`,
 `get_keyword_ranking`, `get_app_reviews`, `search_merchants`,
 `get_merchant`). If none of those tools are available, tell the user this
 skill needs an MCP connection to a Shopify App Store data provider and stop
-— point them to this skill's README.md for how to connect one.
+— point them to this repo's top-level README.md for how to connect one.
 
 ## The tools, one line each
 
