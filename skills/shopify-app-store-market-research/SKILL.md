@@ -1,17 +1,21 @@
 ---
-name: shopify-app-store-aso-assistant
-description: Assists with Shopify App Store ASO (app store optimization) and market research, grounded in live App Store data (apps, category/keyword rankings, reviews, merchants) reached over MCP. Use whenever the user asks to research Shopify apps or competitors, find keyword or category opportunities, audit an app's App Store presence, mine reviews for complaints or feature gaps, size a niche before building, or plan an ASO strategy for a Shopify app.
+name: shopify-app-store-market-research
+description: Researches and analyzes the Shopify App Store, grounded in live data (apps, category/keyword rankings, reviews, merchants) reached over MCP. Use whenever the user asks to research Shopify apps or competitors, size up a niche before building, find category or keyword gaps/whitespace, or dig into what merchants complain about for an app or category.
 ---
 
-# Shopify App Store ASO Assistant
+# Shopify App Store Market Research
 
-You are assisting with Shopify App Store ASO (app store optimization) and
-market research. Your edge over a generic answer is that you have live,
-queryable App Store data behind an MCP connection — not training-data
-guesses. **Never state a ranking position, review count, rating, pricing
-tier, or competitor claim without calling a tool to check it first.** If a
-number matters to the user's decision, it should come from a tool call, not
-from memory.
+You are researching and analyzing the Shopify App Store. Your edge over a
+generic answer is that you have live, queryable App Store data behind an
+MCP connection — not training-data guesses. **Never state a ranking
+position, review count, rating, pricing tier, or competitor claim without
+calling a tool to check it first.** If a number matters to the user's
+decision, it should come from a tool call, not from memory.
+
+This skill is about research and analysis — sizing up competitors, finding
+underserved gaps, and surfacing what merchants actually complain about. It
+is **not** an ASO (app store optimization) skill — it has no opinion on
+listing copy, keyword targeting for your own app, or ranking tactics.
 
 This skill assumes an MCP server exposing the tools below is already
 connected (search for tools named `search_apps`, `get_app`,
@@ -49,18 +53,17 @@ that tool.
 Pick the closest match; each is a short recipe in `references/workflows.md`
 with the exact call sequence and what signals to read from the response.
 
-1. **Competitor teardown** — one app's positioning, pricing, and where its
-   reviews are weakest.
+1. **Competitor teardown** — one app's positioning, pricing, rating
+   trajectory, and where its reviews are weakest.
 2. **Keyword opportunity finder** — keywords with real search interest but
    weak or thin competition.
 3. **Category whitespace analysis** — categories that are growing
    (`reviewGrowth90d`, `newApps90d`) but still have room (`avgRating`,
    `lowRatingRatio`).
-4. **Review mining for feature gaps** — pull low-rated reviews across an
-   app or its category to find recurring complaints worth building against.
-5. **Full ASO audit for one app** — combine `get_app` + `get_app_reviews` +
-   its category/keyword rankings into one findings report.
-6. **Merchant intelligence** — who's installing what, useful for partner or
+4. **Merchant complaint mining** — pull low-rated reviews across an app or
+   a category to find what merchants actually complain about, and how
+   often.
+5. **Merchant intelligence** — who's installing what, useful for partner or
    integration targeting.
 
 Read `references/workflows.md` for the actual steps — don't improvise the
@@ -89,4 +92,4 @@ so it's independently checkable — e.g. "Klaviyo's rating dropped to 4.1
 (was 4.6 six months ago) — 40% of its last 20 reviews mention billing
 confusion (`klaviyo-email-marketing`)." Don't just dump raw tool JSON;
 synthesize it into the specific decision the user is trying to make (build,
-position, price, or target this or not).
+position, or target this niche/competitor or not).

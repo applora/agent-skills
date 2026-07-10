@@ -50,7 +50,10 @@ Same signals as keyword opportunity finding, one level up:
    ratings and real page-1 churn is the whitespace signal — call it out
    explicitly, don't just list the raw numbers.
 
-## 4. Review mining for feature gaps
+## 4. Merchant complaint mining
+
+Works both for one app and for a whole category (run it per top app, then
+compare themes across them).
 
 1. `get_app_reviews({ handle, rating: 1 })` then `rating: 2`, paging with
    `cursor`/`nextCursor` if `total` is large enough to be worth it (don't
@@ -62,24 +65,12 @@ Same signals as keyword opportunity finding, one level up:
    bugs, setup/compatibility, support responsiveness, pricing/billing,
    missing features. Report the theme with quote evidence and a rough
    frequency ("6 of the last 20 one-star reviews mention X").
+4. For a category-level view: run this per top-ranked app
+   (`get_category_ranking`'s `rankedApps`) and compare which complaint
+   themes repeat across multiple apps — a theme that shows up across
+   several competitors is a stronger signal than one app's isolated issue.
 
-## 5. Full ASO audit for one app
-
-Combine workflows 1 and 4, plus:
-
-1. `get_app({ handle })` for the baseline (rankings, keyword coverage,
-   review/rating trend).
-2. For each category/keyword in `categoryRankings`/`keywords.items`, spot-
-   check the ones the user cares about with `get_category_ranking` /
-   `get_keyword_ranking` to see the app's position *relative to the field*,
-   not just in isolation.
-3. `get_app_reviews` low-rating pass (workflow 4) for what's dragging the
-   rating down.
-4. Report as: current standing → trend direction → top complaint theme(s)
-   → 2–3 concrete, prioritized recommendations tied to specific findings
-   (not generic ASO advice).
-
-## 6. Merchant intelligence
+## 5. Merchant intelligence
 
 1. `search_merchants({ search: "<name or fragment>" })` to find a merchant,
    or start from `get_app_reviews`'s `merchantId` field if you're working

@@ -8,7 +8,7 @@ code to run, no dependencies to install.
 ## Install
 
 ```
-npx skills add https://github.com/applora/agent-skills --skill shopify-app-store-aso-assistant
+npx skills add https://github.com/applora/agent-skills --skill shopify-app-store-market-research
 ```
 
 Or copy the skill's folder manually into wherever your agent loads skills
@@ -21,11 +21,12 @@ from — no build step, it's plain Markdown:
 
 ## Skills
 
-### [`shopify-app-store-aso-assistant`](skills/shopify-app-store-aso-assistant/)
+### [`shopify-app-store-market-research`](skills/shopify-app-store-market-research/)
 
-Shopify App Store ASO (app store optimization) and market research —
-competitor teardowns, keyword/category opportunity research, review mining,
-full ASO audits.
+Shopify App Store research and analysis — competitor teardowns,
+keyword/category opportunity and whitespace research, and mining reviews
+for what merchants actually complain about. Not an ASO (app store
+optimization) skill — no listing-copy or ranking-tactics advice.
 
 Needs an MCP connection exposing `search_apps`, `get_app`,
 `list_categories`, `get_category_ranking`, `search_keywords`,
@@ -51,8 +52,8 @@ walkthrough at
 
 ## Why this works
 
-These skills are useful because the data behind them is current. The ASO
-assistant skill is built on Applora's MCP server, which exposes App Store
+These skills are useful because the data behind them is current. The market
+research skill is built on Applora's MCP server, which exposes App Store
 data that Applora tracks continuously — app listings, category and keyword
 rankings, and reviews are recrawled on a schedule, not scraped once and
 left to go stale. An agent calling these tools gets today's rankings and
