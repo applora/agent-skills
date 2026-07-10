@@ -47,4 +47,4 @@ crawling running underneath it.
 
 ## License
 
-MIT — use, copy, and adapt these skills freely.
+MIT
