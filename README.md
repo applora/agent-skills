@@ -46,9 +46,7 @@ tool names/shapes works too), which requires a Pro subscription:
 To see the underlying data before connecting anything:
 [applora.ai/apps](https://applora.ai/apps),
 [applora.ai/categories](https://applora.ai/categories),
-[applora.ai/keywords](https://applora.ai/keywords), or the written
-walkthrough at
-[applora.ai/blog/mcp-market-research-guide](https://applora.ai/blog/mcp-market-research-guide).
+[applora.ai/keywords](https://applora.ai/keywords).
 
 ## Why this works
 
