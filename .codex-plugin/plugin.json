@@ -1,22 +1,32 @@
 {
   "name": "applora",
-  "version": "1.0.0",
-  "description": "Shopify App Store market research — competitor teardowns, keyword/category opportunity research, and merchant complaint mining, backed by Applora's live MCP data.",
+  "version": "1.1.0",
+  "description": "Focused Shopify App Store skills for market opportunities, ASO, review sentiment, competitor research, pricing, and store leads.",
   "author": {
     "name": "Applora",
+    "email": "evan@applora.ai",
     "url": "https://applora.ai"
   },
   "homepage": "https://applora.ai",
   "repository": "https://github.com/applora/agent-skills",
   "license": "MIT",
-  "keywords": ["shopify", "app-store", "market-research", "mcp"],
-  "skills": "./skills/shopify-app-store-market-research",
+  "keywords": ["shopify", "app-store", "market-research", "aso", "mcp"],
+  "skills": "./skills",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "Applora — Shopify App Store Market Research",
-    "shortDescription": "Shopify App Store research: competitors, keyword/category gaps, merchant complaints",
+    "displayName": "Applora — Shopify App Store Intelligence",
+    "shortDescription": "Six focused, data-backed Shopify App Store workflows",
+    "longDescription": "Research Shopify app market opportunities, keyword and ASO strategy, review sentiment, competitors, pricing, and relevant store leads with focused skills grounded in Applora's live and historical MCP data.",
     "developerName": "Applora",
     "category": "Research",
-    "websiteURL": "https://applora.ai"
+    "capabilities": ["Research", "Read"],
+    "websiteURL": "https://applora.ai",
+    "privacyPolicyURL": "https://applora.ai/privacy",
+    "termsOfServiceURL": "https://applora.ai/terms",
+    "defaultPrompt": [
+      "Find the strongest Shopify app market opportunity.",
+      "Analyze competitor reviews for unmet needs.",
+      "Build an evidence-backed ASO plan."
+    ]
   }
 }

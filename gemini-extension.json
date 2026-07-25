@@ -1,11 +1,11 @@
 {
   "name": "applora",
-  "version": "1.0.0",
-  "description": "Shopify App Store market research — competitor teardowns, keyword/category opportunity research, and merchant complaint mining, backed by Applora's live MCP data.",
+  "version": "1.1.0",
+  "description": "Focused Shopify App Store skills for market opportunities, ASO, review sentiment, competitor research, pricing, and store leads.",
   "mcpServers": {
     "applora": {
       "httpUrl": "https://applora.ai/mcp"
     }
   },
-  "contextFileName": "skills/shopify-app-store-market-research/SKILL.md"
+  "contextFileName": "GEMINI.md"
 }

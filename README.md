@@ -1,109 +1,116 @@
 # Applora Agent Skills
 
-A collection of [agent skills](https://www.anthropic.com/news/skills) for
-working with the Shopify App Store. Each skill is a self-contained folder
-of instructions that an AI agent reads to gain a specific capability — no
-code to run, no dependencies to install.
+Six focused skills that turn live and historical Shopify App Store data into
+specific decisions. Each skill uses [Applora](https://applora.ai)'s remote MCP
+server instead of asking an agent to guess from training data.
+
+## Skills
+
+| Skill | Decision it supports |
+|---|---|
+| [`research-shopify-market-opportunities`](skills/research-shopify-market-opportunities/) | Which market gap is worth building for? |
+| [`optimize-shopify-app-aso`](skills/optimize-shopify-app-aso/) | Which keywords and listing experiments can improve discovery? |
+| [`analyze-shopify-app-reviews`](skills/analyze-shopify-app-reviews/) | What do merchants value, request, and repeatedly complain about? |
+| [`analyze-shopify-app-competitors`](skills/analyze-shopify-app-competitors/) | Where are competitors strong, weak, or vulnerable? |
+| [`design-shopify-app-pricing`](skills/design-shopify-app-pricing/) | How should an app package and price its value? |
+| [`find-shopify-store-leads`](skills/find-shopify-store-leads/) | Which stores show relevant public intent signals? |
+
+Every skill requests focused, bounded tool results to keep research fast and
+token-efficient. Market facts, rankings, pricing, and review findings must be
+verified through MCP before the agent uses them in a recommendation.
 
 ## Install
 
-```
-npx skills add https://github.com/applora/agent-skills --skill shopify-app-store-market-research
+Install the complete collection:
+
+```bash
+npx skills add https://github.com/applora/agent-skills
 ```
 
-Or use your agent's own plugin/extension system — this repo ships manifests
-for each:
+Or install one focused workflow:
 
-**Claude Code**: in your terminal, run `claude plugin install`:
-
+```bash
+npx skills add https://github.com/applora/agent-skills --skill analyze-shopify-app-reviews
 ```
+
+Replace the skill name with any entry in the table above.
+
+### Plugin and extension clients
+
+**Claude Code**
+
+```bash
 claude plugin marketplace add applora/agent-skills
 claude plugin install applora@applora-skills
 ```
 
-**OpenAI Codex**: in your terminal, run `codex plugin add`:
+**OpenAI Codex**
 
-```
+```bash
 codex plugin marketplace add applora/agent-skills
 codex plugin add applora@applora-skills
 ```
 
-**Antigravity CLI**: in your terminal, install directly from the repo:
+**Antigravity CLI**
 
-```
+```bash
 agy plugin install https://github.com/applora/agent-skills
 ```
 
-**Cursor**: on Team/Enterprise plans, import as a custom marketplace —
-Dashboard → Settings → Plugins → Team Marketplaces → Import, and paste
-`https://github.com/applora/agent-skills`.
+**Cursor**
 
-**VS Code**: ensure the Agent plugins preview is enabled in Settings, then
-open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`) and run
-`Chat: Install Plugin From Source`, entering:
+On Team or Enterprise plans, open Dashboard → Settings → Plugins → Team
+Marketplaces → Import and enter:
 
-```
+```text
 https://github.com/applora/agent-skills
 ```
 
-**Gemini CLI**: install the extension directly from the repo:
+**VS Code**
 
+Enable the Agent plugins preview, run `Chat: Install Plugin From Source`, and
+enter:
+
+```text
+https://github.com/applora/agent-skills
 ```
+
+**Gemini CLI**
+
+```bash
 gemini extensions install https://github.com/applora/agent-skills
 ```
 
-**Anything else**: copy `skills/shopify-app-store-market-research/` manually
-into wherever your agent loads skills from — no build step, it's plain
-Markdown. Claude Desktop / claude.ai use the skill upload option in
-Settings; check your agent's docs for the equivalent.
+For other agents, copy the required folders from `skills/` into the client's
+skills directory.
 
-## Skills
+## Connect the data
 
-### [`shopify-app-store-market-research`](skills/shopify-app-store-market-research/)
+The included plugin manifests configure the Applora MCP server automatically.
+For a manual connection, add:
 
-Shopify App Store research and analysis — competitor teardowns,
-keyword/category opportunity and whitespace research, and mining reviews
-for what merchants actually complain about. Not an ASO (app store
-optimization) skill — no listing-copy or ranking-tactics advice.
+```text
+https://applora.ai/mcp
+```
 
-Needs an MCP connection exposing `search_apps`, `get_app`,
-`list_categories`, `get_category_ranking`, `search_keywords`,
-`get_keyword_ranking`, `get_app_reviews`, `search_merchants`,
-`get_merchant`. Built and tested against [Applora](https://applora.ai)'s
-MCP server (the reference implementation — any server exposing the same
-tool names/shapes works too), which requires a Pro subscription:
+The OAuth flow will ask you to sign in and approve access; no API key needs to
+be pasted into the agent. Some live tools and deeper history require Pro.
 
-1. Create an account at [applora.ai](https://applora.ai) and subscribe to
-   Pro — see [applora.ai/pricing](https://applora.ai/pricing).
-2. In your agent's MCP client settings, add a remote server at
-   `https://applora.ai/mcp`. Most clients discover the OAuth flow
-   automatically and prompt you to sign in and approve access.
-3. Or use Applora's guided connect page:
-   [applora.ai/dashboard/settings/mcp-server](https://applora.ai/dashboard/settings/mcp-server).
+You can inspect the underlying data first at
+[Apps](https://applora.ai/apps),
+[Categories](https://applora.ai/categories),
+[Keywords](https://applora.ai/keywords), and
+[Market overview](https://applora.ai/appstore).
 
-To see the underlying data before connecting anything:
-[applora.ai/apps](https://applora.ai/apps),
-[applora.ai/categories](https://applora.ai/categories),
-[applora.ai/keywords](https://applora.ai/keywords).
+## Data boundaries
 
-## Why this works
+- Rankings, listings, and reviews are continuously refreshed, but each result
+  still has an observation time.
+- Store-to-app relationships are inferred from public review activity. They are
+  not private or confirmed current install records.
+- Public market data cannot prove competitor revenue, conversion, or merchant
+  willingness to pay. The skills label those gaps instead of inventing them.
 
-These skills are useful because the data behind them is current. The market
-research skill is built on Applora's MCP server, which exposes App Store
-data that Applora tracks continuously — app listings, category and keyword
-rankings, and reviews are recrawled on a schedule, not scraped once and
-left to go stale. An agent calling these tools gets today's rankings and
-this week's reviews, not a snapshot from whenever a training set was
-assembled.
-
-MCP (Model Context Protocol) is what makes this connectable: instead of an
-agent guessing at Shopify App Store facts from memory, it calls a tool and
-gets back structured, current data it can reason over. Each skill's job is
-just to tell the agent which tools exist and how to use them well — the
-data freshness comes from Applora's crawling running underneath it.
-
-## Disclaimer
-
-This project is independently maintained and is not affiliated with,
-endorsed by, or sponsored by Shopify Inc. "Shopify" and "Shopify App Store"
-are trademarks of Shopify Inc.
+This project is independently maintained and is not affiliated with, endorsed
+by, or sponsored by Shopify Inc. "Shopify" and "Shopify App Store" are
+trademarks of Shopify Inc.

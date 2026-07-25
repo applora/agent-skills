@@ -1,0 +1,12 @@
+interface:
+  display_name: "Shopify Competitor Intelligence"
+  short_description: "Expose Shopify app competitor weak spots"
+  default_prompt: "Use $analyze-shopify-app-competitors to find defensible weaknesses in these Shopify app competitors."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "applora"
+      description: "Live and historical Shopify App Store intelligence"
+      transport: "streamable_http"
+      url: "https://applora.ai/mcp"

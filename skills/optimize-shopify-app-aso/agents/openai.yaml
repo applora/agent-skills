@@ -1,0 +1,12 @@
+interface:
+  display_name: "Shopify App ASO"
+  short_description: "Build a data-backed Shopify App Store ASO plan"
+  default_prompt: "Use $optimize-shopify-app-aso to create an evidence-backed ASO plan for my Shopify app."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "applora"
+      description: "Live and historical Shopify App Store intelligence"
+      transport: "streamable_http"
+      url: "https://applora.ai/mcp"
