@@ -1,15 +1,15 @@
 {
-  "name": "applora-skills",
-  "owner": {
-    "name": "Applora",
-    "email": "hi@applora.ai"
-  },
-  "plugins": [
-    {
-      "name": "applora",
-      "source": "./",
-      "description": "Shopify App Store market research — competitor teardowns, keyword/category opportunity research, and merchant complaint mining, backed by Applora's live MCP data.",
-      "homepage": "https://applora.ai"
-    }
-  ]
+	"name": "applora-skills",
+	"owner": {
+		"name": "Applora",
+		"email": "hello@applora.ai"
+	},
+	"plugins": [
+		{
+			"name": "applora",
+			"source": "./",
+			"description": "Shopify App Store research workflows for opportunities, reviews, competitors, ASO, pricing, developers, watchlists and private reports.",
+			"homepage": "https://applora.ai"
+		}
+	]
 }

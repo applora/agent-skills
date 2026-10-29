@@ -1,12 +1,12 @@
 interface:
   display_name: "Shopify App Pricing Strategy"
-  short_description: "Design pricing from market and review evidence"
-  default_prompt: "Use $design-shopify-app-pricing to recommend a stronger pricing and packaging strategy for my Shopify app."
+  short_description: "Turn competitor offers into testable pricing choices"
+  default_prompt: "Use $design-shopify-app-pricing to compare relevant alternatives and design a pricing hypothesis with a clear validation plan."
 
 dependencies:
   tools:
     - type: "mcp"
       value: "applora"
-      description: "Live and historical Shopify App Store intelligence"
+      description: "Shopify App Store research data and private report workspace"
       transport: "streamable_http"
-      url: "https://applora.ai/mcp"
+      url: "https://api.applora.ai/mcp"

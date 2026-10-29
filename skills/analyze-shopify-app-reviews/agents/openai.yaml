@@ -1,12 +1,12 @@
 interface:
-  display_name: "Shopify Review Intelligence"
-  short_description: "Turn app reviews into product decisions"
-  default_prompt: "Use $analyze-shopify-app-reviews to analyze customer sentiment and unmet needs in these Shopify app reviews."
+  display_name: "Shopify Review Analysis"
+  short_description: "Find merchant needs in a transparent review sample"
+  default_prompt: "Use $analyze-shopify-app-reviews to identify recurring merchant needs and product priorities from a bounded review sample."
 
 dependencies:
   tools:
     - type: "mcp"
       value: "applora"
-      description: "Live and historical Shopify App Store intelligence"
+      description: "Shopify App Store research data and private report workspace"
       transport: "streamable_http"
-      url: "https://applora.ai/mcp"
+      url: "https://api.applora.ai/mcp"

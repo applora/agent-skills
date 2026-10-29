@@ -1,12 +1,12 @@
 interface:
   display_name: "Shopify Store Lead Research"
-  short_description: "Find relevant stores from public review signals"
-  default_prompt: "Use $find-shopify-store-leads to find and prioritize Shopify stores showing relevant buying intent."
+  short_description: "Assess merchant fit from public review evidence"
+  default_prompt: "Use $find-shopify-store-leads to identify a small merchant shortlist from public reviews, with evidence, limitations, and respectful outreach angles."
 
 dependencies:
   tools:
     - type: "mcp"
       value: "applora"
-      description: "Live and historical Shopify App Store intelligence"
+      description: "Shopify App Store research data and private report workspace"
       transport: "streamable_http"
-      url: "https://applora.ai/mcp"
+      url: "https://api.applora.ai/mcp"

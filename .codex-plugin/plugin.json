@@ -1,32 +1,32 @@
 {
-  "name": "applora",
-  "version": "1.1.0",
-  "description": "Focused Shopify App Store skills for market opportunities, ASO, review sentiment, competitor research, pricing, and store leads.",
-  "author": {
-    "name": "Applora",
-    "email": "evan@applora.ai",
-    "url": "https://applora.ai"
-  },
-  "homepage": "https://applora.ai",
-  "repository": "https://github.com/applora/agent-skills",
-  "license": "MIT",
-  "keywords": ["shopify", "app-store", "market-research", "aso", "mcp"],
-  "skills": "./skills",
-  "mcpServers": "./.mcp.json",
-  "interface": {
-    "displayName": "Applora — Shopify App Store Intelligence",
-    "shortDescription": "Six focused, data-backed Shopify App Store workflows",
-    "longDescription": "Research Shopify app market opportunities, keyword and ASO strategy, review sentiment, competitors, pricing, and relevant store leads with focused skills grounded in Applora's live and historical MCP data.",
-    "developerName": "Applora",
-    "category": "Research",
-    "capabilities": ["Research", "Read"],
-    "websiteURL": "https://applora.ai",
-    "privacyPolicyURL": "https://applora.ai/privacy",
-    "termsOfServiceURL": "https://applora.ai/terms",
-    "defaultPrompt": [
-      "Find the strongest Shopify app market opportunity.",
-      "Analyze competitor reviews for unmet needs.",
-      "Build an evidence-backed ASO plan."
-    ]
-  }
+	"name": "applora",
+	"version": "1.2.0",
+	"description": "Shopify App Store research workflows for opportunities, reviews, competitors, ASO, pricing, developers, watchlists and private reports.",
+	"author": {
+		"name": "Applora",
+		"email": "hello@applora.ai",
+		"url": "https://applora.ai"
+	},
+	"homepage": "https://applora.ai",
+	"repository": "https://github.com/applora/agent-skills",
+	"license": "MIT",
+	"keywords": ["shopify", "app-store", "market-research", "aso", "mcp"],
+	"skills": "./skills",
+	"mcpServers": "./.mcp.json",
+	"interface": {
+		"displayName": "Applora — Shopify App Store Research",
+		"shortDescription": "Shopify App Store research",
+		"longDescription": "Nine focused workflows for evidence-backed Shopify app research, selected business context, and private Markdown reports saved to your Applora workspace.",
+		"developerName": "Applora",
+		"category": "Research",
+		"capabilities": ["Research", "Read"],
+		"websiteURL": "https://applora.ai",
+		"privacyPolicyURL": "https://applora.ai/privacy",
+		"termsOfServiceURL": "https://applora.ai/terms",
+		"defaultPrompt": [
+			"Find the strongest Shopify app market opportunity.",
+			"Analyze competitor reviews for unmet needs.",
+			"Build an evidence-backed ASO plan."
+		]
+	}
 }

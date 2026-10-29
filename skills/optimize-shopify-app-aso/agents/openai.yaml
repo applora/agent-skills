@@ -1,12 +1,12 @@
 interface:
   display_name: "Shopify App ASO"
-  short_description: "Build a data-backed Shopify App Store ASO plan"
-  default_prompt: "Use $optimize-shopify-app-aso to create an evidence-backed ASO plan for my Shopify app."
+  short_description: "Plan keyword and listing tests from observed results"
+  default_prompt: "Use $optimize-shopify-app-aso to prioritize relevant Shopify keywords and propose measurable listing experiments for my app."
 
 dependencies:
   tools:
     - type: "mcp"
       value: "applora"
-      description: "Live and historical Shopify App Store intelligence"
+      description: "Shopify App Store research data and private report workspace"
       transport: "streamable_http"
-      url: "https://applora.ai/mcp"
+      url: "https://api.applora.ai/mcp"

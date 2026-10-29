@@ -1,13 +1,14 @@
 {
-  "name": "applora",
-  "description": "Focused Shopify App Store skills for market opportunities, ASO, review sentiment, competitor research, pricing, and store leads.",
-  "version": "1.1.0",
-  "author": {
-    "name": "Applora",
-    "url": "https://applora.ai"
-  },
-  "homepage": "https://applora.ai",
-  "repository": "https://github.com/applora/agent-skills",
-  "license": "MIT",
-  "keywords": ["shopify", "app-store", "market-research", "aso", "mcp"]
+	"name": "applora",
+	"description": "Shopify App Store research workflows for opportunities, reviews, competitors, ASO, pricing, developers, watchlists and private reports.",
+	"version": "1.2.0",
+	"author": {
+		"name": "Applora",
+		"url": "https://applora.ai",
+		"email": "hello@applora.ai"
+	},
+	"homepage": "https://applora.ai",
+	"repository": "https://github.com/applora/agent-skills",
+	"license": "MIT",
+	"keywords": ["shopify", "app-store", "market-research", "aso", "mcp"]
 }

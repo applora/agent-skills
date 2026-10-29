@@ -1,0 +1,12 @@
+interface:
+  display_name: "Shopify Developer Research"
+  short_description: "Find developer partners with portfolio evidence"
+  default_prompt: "Use $research-shopify-developers to find relevant Shopify developer partners and explain portfolio fit, observed activity, and next steps."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "applora"
+      description: "Shopify App Store research data and private report workspace"
+      transport: "streamable_http"
+      url: "https://api.applora.ai/mcp"

@@ -1,8 +1,8 @@
 {
-  "mcpServers": {
-    "applora": {
-      "type": "http",
-      "url": "https://applora.ai/mcp"
-    }
-  }
+	"mcpServers": {
+		"applora": {
+			"type": "http",
+			"url": "https://api.applora.ai/mcp"
+		}
+	}
 }
